@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>LKPD 7 Muhaimin</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+        }
+
+        button {
+            padding: 8px 12px;
+            margin-top: 8px;
+            cursor: pointer;
+        }
+
+        input {
+            padding: 6px;
+            margin-top: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>1. Tombol Sembunyikan Paragraf</h2>
+    <p id="paragraf">Klik tombol dibawah</p>
+    <button onclick="document.getElementById('paragraf').style.display='none'">
+        Sembunyikan
+    </button>
+
+    <hr style="margin: 30px 0;" />
+
+    <h2>2. Input Teks Live (oninput)</h2>
+    <input type="text" id="inputLive" placeholder="Ketik sesuatu..." oninput="tampilkan()">
+    <p>Hasil: <span id="outputLive"></span></p>
+
+    <script>
+        function tampilkan() {
+            document.getElementById("outputLive").textContent = document.getElementById("inputLive").value;
+        }
+    </script>
+    <!--
+Apa perbedaan onclick dan onmouseover?
+jawab=onclick harus berinteraksi onmouseover gerakan mouse
+Mengapa event penting untuk interaktivitas?
+jawab=untuk merespon tindakan pengguna
+-->
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LKPD 8 Muhaimin</title>
+</head>
+
+<body>
+  <h3>Form Pendaftaran Sederhana</h3>
+  <input type="text" id="nama" placeholder="Nama lengkap"><br><br>
+  <input type="email" id="email" placeholder="Email"><br><br>
+  <input type="password" id="password" placeholder="Masukkan password (min 8 karakter)" oninput="validatePassword()">
+  <p id="passwordFeedback" aria-live="polite"></p>
+  <button onclick="validasi()">Daftar</button>
+  <script>
+    function validasi() {
+      let nama = document.getElementById("nama").value;
+      let email = document.getElementById("email").value;
+      let pass = document.getElementById("password").value;
+      if (nama === "" || email === "" || pass === "") {
+        alert("Semua kolom wajib diisi!");
+      } else if (!email.includes("@")) {
+        alert("Email tidak valid!");
+      } else {
+        alert("Pendaftaran berhasil!");
+      }
+    }
+
+    // untuk tidak valid password
+    function validatePassword() {
+      const pw = document.getElementById('password').value;
+      const fb = document.getElementById('passwordFeedback');
+      if (pw.length === 0) {
+        fb.innerHTML = ''; // input kosong
+        return;
+      }
+      if (pw.length < 8) {
+        fb.innerHTML = 'Password terlalu pendek — minimal 8 karakter.';
+      } else {
+        fb.innerHTML = 'Password cukup ✓';
+      }
+    }
+
+  </script>
+  <!--
+Mengapa validasi penting sebelum data dikirim ke server?
+jawab=untuk keamanan dan agar tidak terjadi kesalahan
+Apa risiko jika tidak melakukan validasi?
+jawab=tidak aman dan kerusakan data
+
+-->
+
+</body>
